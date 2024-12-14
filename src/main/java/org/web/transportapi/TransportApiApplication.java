@@ -17,6 +17,6 @@ class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "Application deployed successfully via Jenkins!";
+        return "TEST TEST COMMIT";
     }
 }

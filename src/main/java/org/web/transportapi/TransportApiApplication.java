@@ -17,6 +17,6 @@ class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "TEST TEST COMMIT";
+        return "TEST TEST COMMIT2";
     }
 }

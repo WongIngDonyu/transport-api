@@ -36,7 +36,7 @@ public interface PersonApi {
 
     @Operation(summary = "Создать нового пользователя")
     @PostMapping(value = "/api/persons", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    EntityModel<PersonViewDto> createPerson(@Valid @RequestBody PersonViewDto person);
+    EntityModel<PersonDto> createPerson(@RequestBody PersonViewDto person);
 
     @Operation(summary = "Удалить пользователя по ID")
     @DeleteMapping(value = "/api/persons/{id}")
@@ -44,5 +44,5 @@ public interface PersonApi {
 
     @Operation(summary = "Изменить рейс пользователя по ID")
     @PostMapping(value = "/api/persons/{id}/race", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<Void> changePersonRace(@PathVariable UUID id, @RequestParam String raceName);
+    ResponseEntity<String> changePersonRace(@PathVariable UUID id, @RequestParam String raceName);
 }

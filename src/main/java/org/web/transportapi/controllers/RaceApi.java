@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.web.transportapi.dto.RaceDto;
 import org.web.transportapi.dto.RaceViewDto;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,7 +36,7 @@ public interface RaceApi {
 
     @Operation(summary = "Создать новый рейс")
     @PostMapping(value = "/api/races", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    EntityModel<RaceViewDto> createRace(@Valid @RequestBody RaceViewDto race);
+    EntityModel<RaceDto> createRace(@RequestBody RaceViewDto race);
 
     @Operation(summary = "Удалить рейс по ID")
     @DeleteMapping(value = "/api/races/{id}")
@@ -43,5 +44,5 @@ public interface RaceApi {
 
     @Operation(summary = "Обновить время рейса по ID")
     @PostMapping(value = "/api/races/{id}/update-time", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<String> updateRaceTime(@PathVariable UUID id, @RequestBody String newTime);
+    ResponseEntity<String> updateRaceTime(@PathVariable UUID id, @RequestBody LocalDateTime newTime);
 }

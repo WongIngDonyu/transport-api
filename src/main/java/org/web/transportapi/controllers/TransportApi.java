@@ -35,7 +35,7 @@ public interface TransportApi {
 
     @Operation(summary = "Создать новое транспортное средство")
     @PostMapping(value = "/api/transports", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    EntityModel<TransportViewDto> createTransport(@Valid @RequestBody TransportViewDto transport);
+    EntityModel<TransportDto> createTransport(@RequestBody TransportViewDto transport);
 
     @Operation(summary = "Удалить транспортное средство по ID")
     @DeleteMapping(value = "/api/transports/{id}")

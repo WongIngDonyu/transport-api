@@ -5,7 +5,6 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import jakarta.validation.Valid;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -46,3 +45,4 @@ public interface RaceApi {
     @PostMapping(value = "/api/races/{id}/update-time", produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<String> updateRaceTime(@PathVariable UUID id, @RequestBody LocalDateTime newTime);
 }
+
